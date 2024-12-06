@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>EditableNeRF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../images/dokkaebi.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main" style="width:1500px">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>EditableNeRF:</b> Editing Topologically Varying Neural Radiance Fields </br> by Key Points
+				</br>
+				</br>
+                <small>
+				CVPR 2023
+                </small>
+            </h2>
+        </div>
+		</br>
+        <div class="row" style="font-size: 18px">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="..">
+                          Chengwei Zheng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wenbin-lin.github.io/">
+                            Wenbin Lin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://xufeng.site/">
+                          Feng Xu
+                        </a>
+                    </li>
+                </ul>
+                Tsinghua University
+            </div>
+        </div>
+		</br>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2212.04247">
+                            <image src="img/paper.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+								
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./EditableNeRF_supplementary_cvpr23.pdf">
+                            <image src="img/database_icon.png" height="60px">
+                                <h4><strong>Supp</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=Eu2twgbg4kI">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/chengwei-zheng/EditableNeRF_cvpr23">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href=".">
+                            <image src="img/database_icon.png" height="60px">
+                                <h4><strong>Dataset (Coming soon)</strong></h4>
+                            </a>
+                        </li>-->
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="img/teaser.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+                    Neural radiance fields (NeRF) achieve highly photo-realistic novel-view synthesis, but it's a challenging problem to edit the scenes modeled by NeRF-based methods, especially for dynamic scenes. We propose editable neural radiance fields that enable end-users to easily edit dynamic scenes and even support topological changes. Input with an image sequence from a single camera, our network is trained fully automatically and models topologically varying dynamics using our picked-out surface key points. Then end-users can edit the scene by easily dragging the key points to desired new positions. To achieve this, we propose a scene analysis method to detect and initialize key points by considering the dynamics in the scene, and a weighted key points strategy to model topologically varying dynamics by joint key points and weights optimization. Our method supports intuitive multi-dimensional (up to 3D) editing and can generate novel scenes that are unseen in the input sequence. Experiments demonstrate that our method achieves high-quality editing on various dynamic scenes and outperforms the state-of-the-art. Our code and captured data are available in this page.
+                </p>
+            </div>
+        </div>
+		</br>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/Eu2twgbg4kI" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+		</br>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method Overview
+                </h3>
+				<image src="img/pipeline.png" class="img-responsive" alt="overview"><br>
+				<p class="text-justify">
+                     The query point x is first warped into the canonical space by a warp field and a latent code β<sub>t</sub> in frame t. Next, we compute the key point weights of this canonical point x′ and use it to calculate a linear combination of all key point positions k<sub>t</sub>, called weighted key points. After that, we feed the following NeRF MLP with the weighted key points and x′, then the output density and color are used for volumetric rendering. In the training stage, optical flow and depth maps are used to supervise key point positions.
+                </p>
+            </div>
+        </div>
+		</br>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <textarea id="bibtex" class="form-control" style="height:200px" readonly>
+@misc{zheng2023editablenerf,
+      title={EditableNeRF: Editing Topologically Varying Neural Radiance Fields by Key Points}, 
+      author={Chengwei Zheng and Wenbin Lin and Feng Xu},
+      year={2023},
+      eprint={2212.04247},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+				</textarea>
+            </div>
+        </div>
+		
+		<div style="height:100px"></div>
+
+    </div>
+</body>
+</html>
