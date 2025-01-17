@@ -45,7 +45,7 @@ function updatePreview() {
         }
     });
 
-    const offset = -(currentIndex * 410) + (1070 / 2 - 400);
+    const offset = -(currentIndex * 410) + (1100 / 2 - 450);
     videoPreview.style.transform = `translateX(${offset}px)`;
 }
 

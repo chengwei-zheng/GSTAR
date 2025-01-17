@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="container" id="main" style="width:1100px">
+    <div class="container" id="main" style="width:1100px; padding:0">
         <div class="row">
             <h1 class="col-md-12 text-center">
 				</br>
@@ -95,7 +95,8 @@
                     <li>
                         <a href="">
                         <image src="img/github.png" height="60px">
-                            <h4><strong>Code</strong></h4>
+                            <h4 style="margin-bottom: 0px;"><strong>Code</strong></h4>
+							<p style="font-size: 12px; color: gray; margin: 0;">Coming Soon</p>
                         </a>
                     </li>
                     <!--<li>
@@ -108,6 +109,19 @@
             </div>
         </div>
 		</br>
+		
+		<div class="slider">
+			<div class="video-container">
+				<div class="video-preview" id="videoPreview">
+					<!-- Videos will be dynamically added here -->
+				</div>
+				<button id="prevBtn" style="font-size: 14px;">&#9664; Prev</button>
+				<button id="nextBtn" style="font-size: 14px;">Next &#9654;</button>
+			</div>
+		</div>
+		<script src="video/video_slider.js"></script>
+		</br>
+		</br>
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -116,18 +130,7 @@
 					We propose GSTAR, a novel method that (a) enables photo-realistic rendering, surface reconstruction, and 3D tracking for dynamic scenes while handling topology changes. (b) GSTAR adapts to topology changes through two mechanisms: consistent tracking for stable surfaces (red circles) and dynamic surface generation for newly appearing geometry (orange circles).
                 </p>
             </div>
-        </div>		
-		
-		<div class="slider">
-			<div class="video-container">
-				<div class="video-preview" id="videoPreview">
-					<!-- Videos will be dynamically added here -->
-				</div>
-				<button id="prevBtn">&#9664; Prev</button>
-				<button id="nextBtn">Next &#9654;</button>
-			</div>
-		</div>
-		<script src="video/video_slider.js"></script>
+        </div>
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -173,7 +176,7 @@
 					</div>
 					<div style="text-align: center; width: 40%;">
 						<img src="img/mesh_connection.png" alt="mesh_connection" class="img-responsive" style="width: auto; height: 160px; margin: 0 auto;">
-						<p style="width: 80%; margin: 0 auto;">GSTAR generates new faces for new geometry and connects them to the original faces</p>
+						<p style="width: 85%; margin: 0 auto;">GSTAR generates new faces for new geometry and connects them to the original faces</p>
 					</div>
 					<div style="text-align: center; width: 35%;">
 						<img src="img/mesh_gif.gif" alt="Right Image" class="img-responsive" style="width: auto; height: 160px; margin: 0 auto;">
