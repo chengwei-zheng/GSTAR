@@ -1,1 +1,1 @@
-# EditableNeRF
+# GSTAR

@@ -6,162 +6,198 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>EditableNeRF</title>
+    <title>GSTAR</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon" href="../images/dokkaebi.png">
+	<link rel="icon" href="../images/dokkaebi.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="video/video_slider.css">
+    <link rel="stylesheet" href="video/img_row.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    
-    <script src="js/app.js"></script>
+	
 </head>
 
 <body>
-    <div class="container" id="main" style="width:1500px">
+    <div class="container" id="main" style="width:1100px">
         <div class="row">
-            <h2 class="col-md-12 text-center">
-                <b>EditableNeRF:</b> Editing Topologically Varying Neural Radiance Fields </br> by Key Points
+            <h1 class="col-md-12 text-center">
 				</br>
+                <b>GSTAR:</b> Gaussian Surface Tracking and Reconstruction
 				</br>
-                <small>
-				CVPR 2023
-                </small>
-            </h2>
+                <!--<small>
+				CVPR 2025
+                </small>-->
+            </h1>
         </div>
+		</br>
 		</br>
         <div class="row" style="font-size: 18px">
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-                        <a href="..">
-                          Chengwei Zheng
-                        </a>
+                        <a href="..">Chengwei Zheng</a><sup>1</sup>
                     </li>
                     <li>
-                        <a href="https://wenbin-lin.github.io/">
-                            Wenbin Lin
-                        </a>
+                        <a href="https://lxxue.github.io/">Lixin Xue</a><sup>1</sup>
                     </li>
                     <li>
-                        <a href="http://xufeng.site/">
-                          Feng Xu
-                        </a>
+                        <a href="https://ait.ethz.ch/people/jzarate">Juan Zarate</a><sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://ait.ethz.ch/people/song">Jie Song</a><sup>1,2,3</sup>
                     </li>
                 </ul>
-                Tsinghua University
+				</br>
+                <ul class="list-inline">
+                    <li>
+						<sup>1</sup>ETH Zürich
+                    </li>
+                    <li>
+						<sup>2</sup>HKUST(GZ)
+                    </li>
+                    <li>
+						<sup>3</sup>HKUST
+                    </li>
             </div>
         </div>
 		</br>
 
-
         <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                    <ul class="nav nav-pills nav-justified">
-                        <li>
-                            <a href="https://arxiv.org/abs/2212.04247">
-                            <image src="img/paper.png" height="60px">
-                                <h4><strong>Paper</strong></h4>
-								
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./EditableNeRF_supplementary_cvpr23.pdf">
-                            <image src="img/database_icon.png" height="60px">
-                                <h4><strong>Supp</strong></h4>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/watch?v=Eu2twgbg4kI">
-                            <image src="img/youtube_icon.png" height="60px">
-                                <h4><strong>Video</strong></h4>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/chengwei-zheng/EditableNeRF_cvpr23">
-                            <image src="img/github.png" height="60px">
-                                <h4><strong>Code</strong></h4>
-                            </a>
-                        </li>
-                        <!--<li>
-                            <a href=".">
-                            <image src="img/database_icon.png" height="60px">
-                                <h4><strong>Dataset (Coming soon)</strong></h4>
-                            </a>
-                        </li>-->
-                    </ul>
-                </div>
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                        <image src="img/paper.png" height="60px">
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="img/database_icon.png" height="60px">
+                            <h4><strong>Supp</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=OiC2PlNFLUo">
+                        <image src="img/youtube_icon.png" height="60px">
+                            <h4><strong>Video</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <image src="img/github.png" height="60px">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <!--<li>
+                        <a href=".">
+                        <image src="img/database_icon.png" height="60px">
+                            <h4><strong>Dataset (Coming soon)</strong></h4>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
         </div>
+		</br>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Abstract
-                </h3>
-                <image src="img/teaser.png" class="img-responsive" alt="overview"><br>
+            <div class="col-md-10 col-md-offset-1">
+                <image src="img/teaser.png" class="img-responsive" alt="teaser"><br>
                 <p class="text-justify">
-                    Neural radiance fields (NeRF) achieve highly photo-realistic novel-view synthesis, but it's a challenging problem to edit the scenes modeled by NeRF-based methods, especially for dynamic scenes. We propose editable neural radiance fields that enable end-users to easily edit dynamic scenes and even support topological changes. Input with an image sequence from a single camera, our network is trained fully automatically and models topologically varying dynamics using our picked-out surface key points. Then end-users can edit the scene by easily dragging the key points to desired new positions. To achieve this, we propose a scene analysis method to detect and initialize key points by considering the dynamics in the scene, and a weighted key points strategy to model topologically varying dynamics by joint key points and weights optimization. Our method supports intuitive multi-dimensional (up to 3D) editing and can generate novel scenes that are unseen in the input sequence. Experiments demonstrate that our method achieves high-quality editing on various dynamic scenes and outperforms the state-of-the-art. Our code and captured data are available in this page.
+					We propose GSTAR, a novel method that (a) enables photo-realistic rendering, surface reconstruction, and 3D tracking for dynamic scenes while handling topology changes. (b) GSTAR adapts to topology changes through two mechanisms: consistent tracking for stable surfaces (red circles) and dynamic surface generation for newly appearing geometry (orange circles).
+                </p>
+            </div>
+        </div>		
+		
+		<div class="slider">
+			<div class="video-container">
+				<div class="video-preview" id="videoPreview">
+					<!-- Videos will be dynamically added here -->
+				</div>
+				<button id="prevBtn">&#9664; Prev</button>
+				<button id="nextBtn">Next &#9654;</button>
+			</div>
+		</div>
+		<script src="video/video_slider.js"></script>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h2>
+                    Abstract
+                </h2>
+                <p class="text-justify">
+                    3D Gaussian Splatting techniques have enabled efficient photo-realistic rendering of static scenes. Recent works have extended these approaches to support surface reconstruction and tracking. However, tracking dynamic surfaces with 3D Gaussians remains challenging due to complex topology changes, such as surfaces appearing, disappearing, or splitting. To address these challenges, we propose GSTAR, a novel method that achieves photo-realistic rendering, accurate surface reconstruction, and reliable 3D tracking for general dynamic scenes with changing topology. Given multi-view captures as input, GSTAR binds Gaussians to mesh faces to represent dynamic objects. For surfaces with consistent topology, GSTAR maintains the mesh topology and tracks the meshes using Gaussians. In regions where topology changes, GSTAR adaptively unbinds Gaussians from the mesh, enabling accurate registration and the generation of new surfaces based on these optimized Gaussians. Additionally, we introduce a surface-based scene flow method that provides robust initialization for tracking between frames. Experiments demonstrate that our method effectively tracks and reconstructs dynamic surfaces, enabling a range of applications. We will release our implementation to facilitate future research. 
                 </p>
             </div>
         </div>
 		</br>
 
-
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
+            <div class="col-md-10 col-md-offset-1">
+                <h2>
                     Video
-                </h3>
+                </h2>
                 <div class="text-center">
                     <div style="position:relative;padding-top:56.25%;">
-                        <iframe src="https://www.youtube.com/embed/Eu2twgbg4kI" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://www.youtube.com/embed/OiC2PlNFLUo" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>
                 </div>
             </div>
         </div>
 		</br>
 
-
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
+            <div class="col-md-10 col-md-offset-1">
+                <h2>
                     Method Overview
-                </h3>
-				<image src="img/pipeline.png" class="img-responsive" alt="overview"><br>
+                </h2>
+				<image src="img/pipeline.png" class="img-responsive" alt="pipeline"><br>
 				<p class="text-justify">
-                     The query point x is first warped into the canonical space by a warp field and a latent code β<sub>t</sub> in frame t. Next, we compute the key point weights of this canonical point x′ and use it to calculate a linear combination of all key point positions k<sub>t</sub>, called weighted key points. After that, we feed the following NeRF MLP with the weighted key points and x′, then the output density and color are used for volumetric rendering. In the training stage, optical flow and depth maps are used to supervise key point positions.
+                    Taking multi-view captures as input, GSTAR tracks and reconstructs dynamic objects frame by frame. For each frame, GSTAR first warps the previous frame's result using scene flow. It then reconstructs Gaussian Surfaces (Gaussian-attached mesh) by fixed-topology reconstruction. To handle topology-changing surfaces, GSTAR detects topology changes, unbinds Gaussians on these surfaces, and adds new Gaussians as needed . Finally, the Gaussian Surfaces are updated through re-meshing.
                 </p>
+				</br>
+				</br>
+				<div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin: 0 auto;">
+					<div style="text-align: center; width: 25%;">
+						<img src="img/unbind_weight.png" alt="unbind_weight" class="img-responsive" style="width: auto; height: 160px; margin: 0 auto;">
+						<p>GSTAR detects topology changes based on positional gradients and reconstruction errors</p>
+					</div>
+					<div style="text-align: center; width: 40%;">
+						<img src="img/mesh_connection.png" alt="mesh_connection" class="img-responsive" style="width: auto; height: 160px; margin: 0 auto;">
+						<p style="width: 80%; margin: 0 auto;">GSTAR generates new faces for new geometry and connects them to the original faces</p>
+					</div>
+					<div style="text-align: center; width: 35%;">
+						<img src="img/mesh_gif.gif" alt="Right Image" class="img-responsive" style="width: auto; height: 160px; margin: 0 auto;">
+						<p>Mesh faces are dynamically updated when topology changes. (at 0.05 &times; speed)</p>
+					</div>
+				</div>
             </div>
         </div>
 		</br>
 
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
+            <div class="col-md-10 col-md-offset-1">
+                <h2>
                     Citation
-                </h3>
-                <textarea id="bibtex" class="form-control" style="height:200px" readonly>
-@misc{zheng2023editablenerf,
-      title={EditableNeRF: Editing Topologically Varying Neural Radiance Fields by Key Points}, 
-      author={Chengwei Zheng and Wenbin Lin and Feng Xu},
-      year={2023},
-      eprint={2212.04247},
+                </h2>
+                <textarea id="bibtex" class="form-control" style="height:160px" readonly>
+@misc{zheng2025gstar,
+      title={GSTAR: Gaussian Surface Tracking and Reconstruction}, 
+      author={Chengwei Zheng and Lixin Xue and Juan Zarate and Jie Song},
+      year={2025},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
-}
-				</textarea>
+}</textarea>
             </div>
         </div>
 		
